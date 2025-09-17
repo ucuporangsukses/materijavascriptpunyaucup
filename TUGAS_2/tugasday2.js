@@ -181,3 +181,4 @@ function cekSuhu(suhu) { // fungsi dengan 1 parameter
   }
 }
 cekSuhu(28); // contoh pemanggilan
+

@@ -223,5 +223,156 @@ for(let i=0; i<hafalan.length; i++){
 console.log("Total hafalan minggu ini: " + total);
 
 
-// soal no:13
+
+// 13. Tabel Jadwal Shalat
+let jadwal = [
+    { jam: "04:30", shalat: "Subuh" },
+    { jam: "12:15", shalat: "Dzuhur" },
+    { jam: "15:30", shalat: "Ashar" },
+    { jam: "18:00", shalat: "Maghrib" },
+    { jam: "19:15", shalat: "Isya" }
+];
+for (let i = 0; i < jadwal.length; i++) {
+    // string template pakai backtick (`) biar lebih rapih
+    console.log(`${jadwal[i].jam} - ${jadwal[i].shalat}`);
+}
+
+
+// 14. Motivasi Santri
+function motivasi(N) {
+    // tampilkan pesan sebanyak N kali
+    for (let i = 0; i < N; i++) {
+        console.log("Semangat Santri!");
+    }
+}
+motivasi(3);
+
+
+// 15. Pola Bintang Segitiga
+function segitiga(N) {
+    for (let i = 1; i <= N; i++) {
+        // ".repeat(i)" mengulang karakter sesuai angka i
+        console.log("*".repeat(i));
+    }
+}
+segitiga(5);
+
+
+
+
+// OPERATOR
+
+// 16. Hitung Zakat
+function hitungZakat(harta, nisab = 85000000) {
+    // zakat wajib kalau harta >= nisab
+    if (harta >= nisab) {
+        console.log("Zakat:", harta * 0.025);
+    } else {
+        console.log("Belum wajib zakat");
+    }
+}
+hitungZakat(100000000);
+
+
+// 17. Validasi Login Santri
+function login(username, password) {
+    const user = "santri";
+    const pass = "12345";
+    // harus sama persis username dan password-nya
+    if (username === user && password === pass) {
+        console.log("Login berhasil");
+    } else {
+        console.log("Login gagal");
+    }
+}
+login("santri", "12345");
+
+
+// 18. Capaian Hafalan dan Akhlak
+function kelulusan(hafalan, akhlak) {
+    // syarat lulus = hafalan minimal 10 dan akhlak minimal 80
+    if (hafalan >= 10 && akhlak >= 80) {
+        console.log("Lulus");
+    } else {
+        console.log("Belum Lulus");
+    }
+}
+kelulusan(12, 85);
+
+
+// 19. Diskon Buku Kitab
+function diskonBuku(usia, belanja) {
+    // diskon 10% kalau usia < 18 ATAU belanja > 1 juta
+    if (usia < 18 || belanja > 1000000) {
+        console.log("Diskon 10%");
+    } else {
+        console.log("Tidak ada diskon");
+    }
+}
+diskonBuku(17, 500000);
+
+
+// 20. Validasi Password Kompleks
+function validasiPassword(pass) {
+    let panjang = pass.length >= 8;       // cek panjang minimal 8
+    let adaKapital = /[A-Z]/.test(pass);  // cek ada huruf besar
+    let adaKecil = /[a-z]/.test(pass);    // cek ada huruf kecil
+    let adaAngka = /[0-9]/.test(pass);    // cek ada angka
+
+    if (panjang && adaKapital && adaKecil && adaAngka) {
+        console.log("Password valid");
+    } else {
+        console.log("Password tidak valid");
+    }
+}
+validasiPassword("Abcd1234");
+
+
+
+// FUNCTION SEDERHANA
+
+
+// 21. Jadwal Kajian Rutin
+function kajian(ustadz, hari) {
+    console.log(`Ngaji bersama ${ustadz} setiap hari ${hari}`);
+}
+kajian("Ustadz Yusuf", "Jumat");
+
+
+// 22. Hitung Luas dan Keliling Lapangan Pesantren
+function lapangan(p, l) {
+    let luas = p * l;              // rumus luas persegi panjang
+    let keliling = 2 * (p + l);    // rumus keliling
+    return { luas, keliling };     // hasil dikembalikan dalam bentuk object
+}
+console.log(lapangan(20, 10));
+
+
+// 23. Konversi Tahun Hijriyah ke Masehi
+function hijriyahKeMasehi(tahun) {
+    return tahun + 622; // selisih tahun hijriyah dengan masehi
+}
+console.log(hijriyahKeMasehi(1446));
+
+
+// 24. Hitung Total Hafalan
+function totalHafalan(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]; // jumlahkan semua elemen array
+    }
+    return sum;
+}
+console.log(totalHafalan([2, 3, 4, 5]));
+
+
+// 25. Balikkan Nama Santri
+function balikNama(nama) {
+    // split() → ubah string jadi array
+    // reverse() → balik urutan array
+    // join("") → gabungin lagi jadi string
+    return nama.split("").reverse().join("");
+}
+console.log(balikNama("Ahmad"));
+
 
