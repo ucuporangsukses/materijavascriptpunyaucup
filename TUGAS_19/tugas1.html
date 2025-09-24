@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- no1 -->
+    <button onclick="alert('Halo!')">Klik Gue</button><br />
+
+    <!-- no2 -->
+
+    <img
+      src="https://i.pinimg.com/474x/3a/da/a0/3adaa09371da6811fed567c88626cd3f.jpg"
+      width="200"
+      onclick="bae(this)"
+    />
+
+    <!-- no3 -->
+    <p ondblclick="this.innerText = 'Double clicked!'">
+      Paragraf ini akan berubah teks saat di-double click
+    </p>
+    <br />
+
+    <!-- no4 -->
+
+    <input
+      type="text"
+      placeholder="Isi sesuatu..."
+      onfocus="this.placeholder = 'Tulis di sini...'"
+    />
+    <br />
+
+    <!-- no5 -->
+
+    <button
+      onmousedown="this.innerText = 'Mouse Down'"
+      onmouseup="this.innerText = 'Mouse Up'"
+    >
+      Tekan Tombol</button
+    ><br />
+
+    <!-- no6 -->
+
+    <p id="msg">Teks awal</p>
+    <button id="btn">Klik Tombol</button><br />
+
+    <!-- no7 -->
+
+    <div id="area" style="width: 200px; height: 100px; border: 1px solid #000">
+      Arahkan mouse ke area ini
+    </div>
+    <br />
+
+    <!-- no8 -->
+
+    <input type="text" id="myInput" placeholder="Ketik sesuatu..." />
+    <p>Hasil: <span id="show"></span></p>
+    <br />
+
+    <!-- no9 -->
+
+    <button id="btnDisable">Klik untuk Disable</button>
+    <br />
+
+    <!-- no10 -->
+
+    <button id="btnTest">pencet ni tombol</button>
+    <br />
+
+    <!-- no11 -->
+
+    <button id="btnMulti">Klik Aku</button> <br />
+
+    <!-- no12 -->
+
+    <button id="btnRemove">Klik Aku</button>
+    <button id="removeHandler">Remove Handler</button><br />
+
+    <!-- no13 -->
+
+    <form id="myForm">
+      <input type="text" id="nama" placeholder="Masukkan nama" />
+      <button type="submit">Submit</button>
+    </form>
+    <br />
+
+    <!-- no14 -->
+    <ul id="myList">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <br />
+
+    <!-- no15 -->
+
+    <button id="myButton">Klik Aku Sekali!</button>
+
+    <script>
+      // no 2
+      function bae(gambar) {
+        gambar.src = "/TUGAS_19/Gemini_Generated_Image_yw637iyw637iyw63.png";
+      }
+
+      //no6
+
+      document.getElementById("btn").onclick = function () {
+        document.getElementById("msg").innerText = "Teks berubah!";
+      };
+
+      //no7
+
+      let area = document.getElementById("area");
+
+      area.onmouseover = function () {
+        area.style.backgroundColor = "lightblue";
+      };
+
+      area.onmouseout = function () {
+        area.style.backgroundColor = "white";
+      };
+
+      //no8
+
+      let input = document.getElementById("myInput");
+      let show = document.getElementById("show");
+
+      input.oninput = function () {
+        show.innerText = this.value;
+      };
+
+      //n09
+
+      let btn = document.getElementById("btnDisable");
+
+      btn.onclick = function () {
+        this.disabled = true; // setelah diklik tombol langsung nonaktif
+        this.innerText = "Tombol sudah nonaktif";
+      };
+
+      //no10
+
+      let btnTest = document.getElementById("btnTest");
+
+      // assign handler pertama
+      btnTest.onclick = function () {
+        alert("Handler pertama");
+      };
+
+      // assign handler kedua → menimpa yang pertama
+      btnTest.onclick = function () {
+        alert("Handler kedua");
+      };
+
+      //no11
+
+      let btnMulti = document.getElementById("btnMulti");
+
+      // handler pertama: ubah warna tombol
+      function ubahWarna() {
+        btnMulti.style.backgroundColor = "lightgreen";
+      }
+
+      // handler kedua: tulis log di console
+      function tulisLog() {
+        console.log("Tombol diklik!");
+      }
+
+      // pasang kedua handler
+      btnMulti.addEventListener("click", ubahWarna);
+      btnMulti.addEventListener("click", tulisLog);
+
+      //no12
+      let btnRemove = document.getElementById("btnRemove");
+
+      // named function agar bisa di-remove
+      function sayHello() {
+        alert("Hello!");
+      }
+
+      // pasang event handler
+      btnRemove.addEventListener("click", sayHello);
+
+      // tombol untuk remove handler
+      document
+        .getElementById("removeHandler")
+        .addEventListener("click", function () {
+          btnRemove.removeEventListener("click", sayHello);
+          alert("Handler dihapus!");
+        });
+
+      //no13
+
+      let form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // cegah reload halaman
+        let value = document.getElementById("nama").value;
+        console.log("Isi input:", value);
+      });
+
+      //no14
+
+      let ul = document.getElementById("myList");
+
+      ul.addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+          e.target.innerText = "Diubah!";
+        }
+      });
+
+      //no15
+
+      // Ambil elemen tombol
+      const button = document.getElementById("myButton");
+
+      // Buat handler function
+      function handleClick() {
+        alert("Tombol ini cuma bisa diklik sekali!");
+      }
+
+      // Pasang event listener dengan option { once: true }
+      button.addEventListener("click", handleClick, { once: true });
+    </script>
+  </body>
+</html>

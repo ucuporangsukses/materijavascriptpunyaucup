@@ -34,7 +34,7 @@ console.log(jsonstr3.nama);
 console.log(jsonstr3.status);
 
 
-//soal no
+//soal no5
 const jsonstr4 = `["pisang", "apel", "jeruk"]`
 const buahArray = JSON.parse (jsonstr4);
 buahArray.forEach((buah) => {
@@ -42,7 +42,7 @@ buahArray.forEach((buah) => {
 
 })
 
-// soal no
+// soal no6
 const mobilJSON = `{
     "merk": "honda",
     "model": "civic",
@@ -55,7 +55,7 @@ for (let key in mobil) {
 }
 
 
-// no
+// no7
 function sapaNama(nama,callback) {
     console.log("Halo" + nama)
     callback()
@@ -65,7 +65,7 @@ sapaNama("ZIDAN", function(){
 })
 
 
-//no
+//no7
 function hitungLuas(lebar,panjang,callback) {
     const luas = panjang*lebar;
     callback(luas)
@@ -75,7 +75,7 @@ function hitungLuas(lebar,panjang,callback) {
  })
 
 
- //no 
+ //no 8
  let data = [1,2,3,4,7687]
  function ProsesData(data,callback) {
     const panjang = data.length
@@ -87,7 +87,7 @@ function hitungLuas(lebar,panjang,callback) {
  ProsesData(data,bebek)
 
 
- //no
+ //no9
  function sapaNama(nama,callback) {
     console.log("Halo" + nama)
     callback()
@@ -97,7 +97,7 @@ sapaNama("Aisyah", function(){
 })
 
 
-//no
+//no11
 // bikin fungsi
 function kirimPesan(pesan, callback) {
   callback(pesan); // jalankan callback sambil bawa pesan
@@ -108,7 +108,7 @@ kirimPesan("halo bre belajar json asik pisan", function(pesan) {
   console.log(pesan.toUpperCase());
 });
 
-// no
+// no 12
 // bikin fungsi
 function prosesAsync(callback) {
   setTimeout(() => {
@@ -122,7 +122,7 @@ prosesAsync(function(pesan) {
 });
 
 
-//soal
+//soal13
 // bikin fungsi
 function ambilData(callback) {
   console.log("Mengambil data dari server...");

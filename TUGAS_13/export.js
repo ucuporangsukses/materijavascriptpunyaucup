@@ -26,6 +26,6 @@ export const gabung = (nama, nomor) => `${nama} - ${nomor}`;
 // soal 5
 
 export default function hitungBuku(n) {
-  hitungBuku: ()
+  hitungBuku: 
 }
  
